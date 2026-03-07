@@ -107,3 +107,31 @@ Most laptops fall between €600–€1500, making extreme low-end predictions d
 
 ---
 
+## ⚠️ Model Limitations Observed
+
+During experimentation, two regression models were evaluated: **Linear Regression** and **Random Forest Regressor**.
+
+### Linear Regression
+The linear model was trained using a log-transformed target variable (`log(price)`) to address the skewed distribution of laptop prices.  
+However, during prediction the model occasionally produced **extreme values** when encountering feature combinations outside the range of the training data.
+
+This occurs because:
+- Linear Regression extrapolates beyond the training distribution.
+- Small deviations in log-space can lead to **very large values after exponential transformation**.
+
+As a result, the linear model was not suitable for deployment.
+
+### Random Forest
+Random Forest performed more reliably overall, achieving an **R² score of ~0.8** on the test set.
+
+However, another limitation was observed:
+- The dataset contains relatively **few very low-priced laptops**.
+- Since Random Forest cannot extrapolate beyond the patterns it has seen during training, predictions for low-end specifications are often **biased toward mid-range prices**.
+
+### Conclusion
+Due to these observations:
+- **Linear Regression was excluded from the final deployment.**
+- **Random Forest was selected as the final model** because it provides more stable and realistic predictions for most laptop configurations.
+
+---
+
