@@ -122,11 +122,22 @@ This occurs because:
 As a result, the linear model was not suitable for deployment.
 
 ### Random Forest
-Random Forest performed more reliably overall, achieving an **R² score of ~0.8** on the test set.
+Random Forest performed more reliably overall, achieving an **R² score of ~0.81** on the test set.
 
 However, another limitation was observed:
 - The dataset contains relatively **few very low-priced laptops**.
 - Since Random Forest cannot extrapolate beyond the patterns it has seen during training, predictions for low-end specifications are often **biased toward mid-range prices**.
+
+---
+
+## Model Performance
+
+| Model | R² Score | MAE |
+|------|------|------|
+| Linear Regression (log target) | ~0.74 | 228 |
+| Random Forest Regressor | ~0.81 | 190 |
+
+---
 
 ### Conclusion
 Due to these observations:
@@ -134,4 +145,3 @@ Due to these observations:
 - **Random Forest was selected as the final model** because it provides more stable and realistic predictions for most laptop configurations.
 
 ---
-
