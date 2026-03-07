@@ -1,1 +1,3 @@
-laptop_price_predictor_lr.pkl
+*.pkl
+*.ipynb
+*.csv
