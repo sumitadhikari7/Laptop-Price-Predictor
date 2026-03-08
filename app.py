@@ -37,3 +37,26 @@ hdd = st.select_slider("Select HDD (GB)",
                        value=0)
 touchscreen = st.selectbox("Touchscreen", options=["No", "Yes"])
 ips = st.selectbox("IPS Display", options=["No", "Yes"])
+x_res = st.select_slider("Resolution Width",
+                    options= [1366,1440,1600,1920,2160,2256,2304,2400,2560,2736,2880,3200,3840],
+                    value=0)
+y_res = st.select_slider("Resolution Height: ",
+                         options=[768,900,1080,1200,1440,1504,1600,1800,1824,2160],
+                         value=0)
+ppi = np.sqrt(x_res**2 + y_res**2) / inches
+
+set_feature("Inches", inches)
+set_feature("Ram", ram)
+set_feature("Weight", weight)
+set_feature("SSD", ssd)
+set_feature("HDD", hdd)
+set_feature("Touchscreen", touchscreen)
+set_feature("Ips", ips)
+set_feature("X_res", x_res)
+set_feature("Y_res", y_res)
+set_feature("PPI", ppi)
+
+st.header("Laptop Details")
+
+
+
