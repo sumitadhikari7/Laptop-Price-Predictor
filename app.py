@@ -35,8 +35,13 @@ ssd = st.select_slider("Select SSD (GB)",
 hdd = st.select_slider("Select HDD (GB)",
                        options=[0,32,128,500,1000,2000],
                        value=0)
+
 touchscreen = st.selectbox("Touchscreen", options=["No", "Yes"])
+touchscreen = 1 if touchscreen == "Yes" else 0
+
 ips = st.selectbox("IPS Display", options=["No", "Yes"])
+ips = 1 if ips == "Yes" else 0
+
 x_res = st.select_slider("Resolution Width",
                     options= [1366,1440,1600,1920,2160,2256,2304,2400,2560,2736,2880,3200,3840],
                     value=1366)
