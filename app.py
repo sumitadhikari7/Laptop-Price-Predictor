@@ -39,10 +39,10 @@ touchscreen = st.selectbox("Touchscreen", options=["No", "Yes"])
 ips = st.selectbox("IPS Display", options=["No", "Yes"])
 x_res = st.select_slider("Resolution Width",
                     options= [1366,1440,1600,1920,2160,2256,2304,2400,2560,2736,2880,3200,3840],
-                    value=0)
+                    value=1366)
 y_res = st.select_slider("Resolution Height: ",
                          options=[768,900,1080,1200,1440,1504,1600,1800,1824,2160],
-                         value=0)
+                         value=768)
 ppi = np.sqrt(x_res**2 + y_res**2) / inches
 
 set_feature("Inches", inches)
@@ -58,5 +58,20 @@ set_feature("PPI", ppi)
 
 st.header("Laptop Details")
 
+def choose_option(prefix):
+    options = [col.replace(prefix +"_","") for col in model_cols if col.startswith(prefix + "_")]
+    selected = st.selectbox(prefix, options)
+    set_feature(f"{prefix}_{selected}", 1)
 
+choose_option("Company")
+choose_option("TypeName")
+choose_option("OpSys")
+choose_option("Cpu_Brand")
+choose_option("Gpu_Brand")
+
+if st.button("Predict Price"):
+    prediction = model.predict([features])[0]
+
+    st.subheader("Estimated Laptop Price: ")
+    st.success(f"{prediction:.2f} (Euros)")
 
