@@ -14,3 +14,5 @@ ram = st.select_slider("Select RAM (GB):",
 weight = st.select_slider("Select Weight(kg): ",
                           options=[1.0,1.5,2.0,2.5,3.0,3.5],
                           value= 1.0)
+touchscreen = st.selectbox("Touchscreen", options=["No", "Yes"])
+ips = st.selectbox("IPS Display", options=["No", "Yes"])
