@@ -59,7 +59,7 @@ set_feature("Touchscreen", touchscreen)
 set_feature("Ips", ips)
 set_feature("X_res", x_res)
 set_feature("Y_res", y_res)
-set_feature("PPI", ppi)
+set_feature("ppi", ppi)
 
 st.header("Laptop Details")
 
