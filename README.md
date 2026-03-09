@@ -145,6 +145,15 @@ However, another limitation was observed:
 git clone https://github.com/sumitadhikari7/Laptop-Price-Predictor.git
 cd Laptop-Price-Predictor
 ```
+2. Install required packages
+```bash
+pip install -r requirements.txt
+```
+3. Run the Application
+Start the Streamlit application using the following command.
+```bash
+streamlit run app.py
+```
 
 ## Conclusion
 Due to these observations:
