@@ -139,7 +139,14 @@ However, another limitation was observed:
 
 ---
 
-### Conclusion
+## Installation
+1. Clone the repository
+```bash
+git clone https://github.com/sumitadhikari7/Laptop-Price-Predictor.git
+cd Laptop-Price-Predictor
+```
+
+## Conclusion
 Due to these observations:
 - **Linear Regression was excluded from the final deployment.**
 - **Random Forest was selected as the final model** because it provides more stable and realistic predictions for most laptop configurations.
