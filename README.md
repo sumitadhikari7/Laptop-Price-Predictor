@@ -154,6 +154,11 @@ Start the Streamlit application using the following command.
 ```bash
 streamlit run app.py
 ```
+4. Open in Browser
+After running the command, the application will automatically open in your browser at:
+```bash
+http://localhost:8501
+```
 
 ## Conclusion
 Due to these observations:
