@@ -163,6 +163,7 @@ http://localhost:8501
 - Enter or select the laptop specifications in the interface
 - Click `Predict Price`
 - The model will display the estimated laptop price
+---
 
 ## Conclusion
 Due to these observations:
